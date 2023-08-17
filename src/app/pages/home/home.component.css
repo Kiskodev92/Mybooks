@@ -1,0 +1,13 @@
+main{
+min-height: 82vh;
+background-image: url(src/assets/img/Book.jpg);
+background-size: contain;
+display: flex;
+flex-direction: column;
+justify-content: space-around;
+align-items: center;
+}
+h2{
+    color: rgb(253, 176, 77);
+    font-weight: bolder;
+}

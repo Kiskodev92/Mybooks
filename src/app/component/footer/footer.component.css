@@ -1,0 +1,19 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background:grey;
+    display: flex;
+    justify-content: space-around;
+}
+div{
+    height: 50px; 
+    width:100%; 
+    position:absolute; 
+    bottom:0; 
+    left:0;
+    align-items: center; }
+a{
+    color: azure;
+    text-decoration: none;
+}
