@@ -1,13 +1,13 @@
 main{
-min-height: 82vh;
+min-height: 90vh;
 background-image: url(src/assets/img/Book.jpg);
-background-size: contain;
+background-size: cover;
 display: flex;
 flex-direction: column;
 justify-content: space-around;
 align-items: center;
 }
 h2{
-    color: rgb(253, 176, 77);
+    color: rgb(52, 171, 121);
     font-weight: bolder;
 }
