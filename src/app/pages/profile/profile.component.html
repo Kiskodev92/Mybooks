@@ -1,0 +1,19 @@
+<main>
+    <section>
+        <img src="{{user.photo}}" alt="">
+        <div>
+            <h3>{{user.name}} {{ user.last_name}}</h3>
+            <p>{{user.name}}</p>
+            <p>{{user.last_name}}</p>
+            <p>{{user.email}}</p>
+        </div>
+    </section>
+    <section>
+        <h2>Editar datos</h2>
+        <input type="text" placeholder="Nombre" #nombre>
+        <input type="text" placeholder="Apellidos" #apellido>
+        <input type="text" placeholder="Correo" #email>
+        <input type="text" placeholder="Url" #url>
+        <button (click)="update(nombre, apellido,email, url)">Modificar</button>
+    </section>
+</main>
