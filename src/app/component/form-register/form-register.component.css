@@ -3,6 +3,13 @@ main{
     background-image: url(src/assets/img/Book.jpg);
 background-size: cover;
 background-repeat:no-repeat;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+div{
+    max-width: 300px;
+    width: 100%;
 }
 form{
     background-color: rgb(195, 204, 204);
