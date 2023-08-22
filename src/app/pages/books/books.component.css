@@ -1,5 +1,5 @@
 main{
-    height: 90vh;
+    min-height: 90vh;
     background-image: url(src/assets/img/Book.jpg);
     background-size: cover;
     background-repeat:no-repeat;
@@ -11,7 +11,8 @@ main{
 
 }
 section{
-    margin-top: 20px;
+    margin-top: 15px;
+    margin-bottom: 20px;
     width: 300px;
     border:0.5px solid black;
     box-shadow: 2px 2px 5px black;
@@ -53,4 +54,10 @@ h2{text-decoration: underline;}
     border-radius: 5px;
     color: white;
     background-color: rgb(52, 171, 121);
+}
+.claseplata{
+    background-color: silver;
+}
+.claseoro{
+    background-color: gold;
 }

@@ -16,7 +16,7 @@
         <p>{{book.author}}</p>
         <p style="color: black">{{book.id_book | code}}</p>
         <p style="font-weight: bolder; color: rgb(16, 66, 66); font-size: larger;">{{book.price}} €</p>
-        <button style="margin-bottom: 4px;border-radius: 5px;" [ngClass]="{'background': (par) ? 'silver' : 'gold'}">Comprar</button>
+        <button style="margin-bottom: 4px;border-radius: 5px;" [ngClass]="{'claseplata': par , 'claseoro' : impar}">Comprar</button>
     </div>
 </ng-container>
 </div>
