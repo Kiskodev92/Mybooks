@@ -1,11 +1,35 @@
-<ng-container>
-    <div>
-        <img src="" alt="">
-        <p>Aqui el tipo de tapa</p>
-        <p>Aqui el titulo</p>
-        <p>Aqui el autor</p>
-        <p>Aqui el precio</p>
-        <p>Aqui la referencia</p>
+<main>
+<div class="titulo" *ngIf="books.length === 0; else lista">
+    <h1>No hay libros</h1>
+</div>
+<ng-template  #lista>
+    <div class="titulo">
+    <h2>Lista de libros</h2>
+    </div>
+</ng-template>
+<div class="listalibros">
+    <ng-container *ngFor="let book of books; let par = even; let impar = odd">
+    <div class="card" style="width: 10rem;">
+        <img src="{{book.photo}}" style="margin-top: 10px;">
+        <p style=" font-weight: bolder; color: rgb(13, 27, 118); font-size: small;">{{book.type}}</p>
+        <p style="font-weight: bolder; color: rgb(16, 66, 66);">{{book.title}}</p>
+        <p>{{book.author}}</p>
+        <p style="color: black">{{book.id_book | code}}</p>
+        <p style="font-weight: bolder; color: rgb(16, 66, 66); font-size: larger;">{{book.price}} €</p>
+        <button style="margin-bottom: 4px;border-radius: 5px;" [ngClass]="{'background': (par) ? 'silver' : 'gold'}">Comprar</button>
     </div>
 </ng-container>
-
+</div>
+<div class="formula">
+    <section>
+        <h2>Añadir libro</h2>
+        <input type="text" placeholder="Titulo">
+        <input type="text" placeholder="Categoría">
+        <input type="text" placeholder="Autor">
+        <input type="text" placeholder="Precio">
+        <input type="text" placeholder="Foto">
+        <input type="text" placeholder="Codigo libro">
+        <button class="butform">Añadir</button>
+    </section>
+</div>
+</main>

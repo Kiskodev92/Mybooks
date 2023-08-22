@@ -6,6 +6,6 @@ export class Book {
         public price: number,
         public photo: string ,
         public id_book: number,
-        public id_user: number
+        public id_user: number,
 ){}
 }

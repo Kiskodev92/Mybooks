@@ -10,6 +10,7 @@ import { FormRegisterComponent } from './component/form-register/form-register.c
 import { RegisterComponent } from './pages/register/register.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { BooksComponent } from './pages/books/books.component';
+import { CodePipe } from './pipes/code.pipe';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { BooksComponent } from './pages/books/books.component';
     FormRegisterComponent,
     RegisterComponent,
     ProfileComponent,
-    BooksComponent
+    BooksComponent,
+    CodePipe
   ],
   imports: [
     BrowserModule,
