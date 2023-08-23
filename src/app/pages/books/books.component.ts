@@ -17,4 +17,9 @@ export class BooksComponent {
       new Book("El hobbit","Fantasia", "Tolkien", 17.99, "https://proassetspdlcom.cdnstatics2.com/usuaris/libros/fotos/357/original/portada_el-hobbit_j-r-r-tolkien_202207271130.jpg", 1239, 0 ),
     ]
   }
+  addbook(title:HTMLInputElement, type:HTMLInputElement, author:HTMLInputElement, price:HTMLInputElement, photo:HTMLInputElement, id_book:HTMLInputElement, id_user:HTMLInputElement){
+    let newbook = new Book(title.value, type.value, author.value, price.valueAsNumber, photo.value, id_book.valueAsNumber, id_user.valueAsNumber)
+    console.log(newbook);
+    this.books.push(newbook);
+  }
 }

@@ -7,7 +7,7 @@
     justify-content: space-around;
 }
 div{
-    height: 50px; 
+    min-height: 50px; 
     width:100%; 
     position: static; 
     bottom:0; 
