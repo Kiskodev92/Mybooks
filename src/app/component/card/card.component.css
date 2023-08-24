@@ -1,0 +1,20 @@
+.listalibros{
+    display: flex;
+    justify-content: space-around;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+    align-items: center;
+    background-color: aliceblue;
+}
+img{
+    height: 200px;
+}
+.claseplata{
+    background-color: silver;
+}
+.claseoro{
+    background-color: gold;
+}
