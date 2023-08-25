@@ -9,8 +9,10 @@
     align-items: center;
     background-color: aliceblue;
 }
+
 img{
     height: 200px;
+    width: 140px;
 }
 .claseplata{
     background-color: silver;
