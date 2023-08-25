@@ -8,9 +8,9 @@
     </div>
 </ng-template>
 <div class="listalibros">
-    <ng-container *ngFor="let bookpadre of books; let par = even; let impar = odd">
-    <app-card [book]="bookpadre"></app-card>
-</ng-container>
+    <ng-container *ngFor="let bookpadre of books; let par = even">
+    <app-card [book]="bookpadre" [par]="par" (eventSon)="cerrarX($event)"></app-card>
+    </ng-container>
 </div>
 <div class="formula">
     <section>

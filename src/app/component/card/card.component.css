@@ -18,3 +18,8 @@ img{
 .claseoro{
     background-color: gold;
 }
+.btx{
+    border: none;
+    background-color: aliceblue;
+    font-weight: bolder;
+}

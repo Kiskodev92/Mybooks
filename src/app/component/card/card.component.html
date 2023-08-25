@@ -1,10 +1,10 @@
     <div class="card" style="width: 10rem;">
-        <button type="button" class="btn-close" disabled aria-label="Close"></button>
+        <button class="btx" (click)="eliminarX()">X</button>
         <img src="{{book.photo}}" style="margin-top: 10px;">
         <p style=" font-weight: bolder; color: rgb(13, 27, 118); font-size: small;">{{book.type}}</p>
         <p style="font-weight: bolder; color: rgb(16, 66, 66);">{{book.title}}</p>
         <p>{{book.author}}</p>
         <p style="color: black">{{book.id_book | code}}</p>
         <p style="font-weight: bolder; color: rgb(16, 66, 66); font-size: larger;">{{book.price}} €</p>
-        <!-- <button style="margin-bottom: 4px;border-radius: 5px;" [ngClass]="{'claseplata': par , 'claseoro' : impar}">Comprar</button> -->
+        <button style="margin-bottom: 4px;border-radius: 5px;" [ngClass]="par ? 'claseplata'  : 'claseoro'">Comprar</button>
     </div>
