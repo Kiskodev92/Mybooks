@@ -12,7 +12,6 @@ h4{
     align-items: center;
     padding-left:20px ;
     font-weight: bolder;
-
 }
 section{
     align-items: center;
@@ -25,4 +24,11 @@ a{
     color: white;
     text-decoration: none;
     padding: 15px;
+}
+
+a:hover{
+    background-color: grey;
+    color:rgb(52, 171, 121);
+    border-radius: 5px;
+    font-weight: bolder;
 }

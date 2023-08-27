@@ -8,7 +8,7 @@ main{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-
+    margin-top: 20px;
 }
 section{
     margin-top: 15px;
@@ -60,4 +60,8 @@ h2{text-decoration: underline;}
 }
 .claseoro{
     background-color: gold;
+}
+.butform:hover{
+    background: rgb(31, 141, 219);
+    color: rgb(237, 248, 41);
 }

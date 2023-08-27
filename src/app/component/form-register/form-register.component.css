@@ -43,3 +43,7 @@ button{
     height: 5vh;
     width: 18vh;
 }
+button:hover{
+    background: rgb(31, 141, 219);
+    color: rgb(237, 248, 41);
+}

@@ -14,7 +14,7 @@ section{
     height: 50vh;
     width: 40vh;
     border: 0.5px solid rgb(255, 255, 255);
-    border-radius: 1px;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -46,4 +46,14 @@ button{
     border-radius: 4px;
     height: 5vh;
     width: 15vh;
+}
+
+section:hover{
+    transform: scale(1.2);
+    transition: all 300ms;
+}
+
+button:hover{
+    background: rgb(31, 141, 219);
+    color: rgb(237, 248, 41);
 }
