@@ -4,10 +4,14 @@ import { HomeComponent } from './pages/home/home.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { BooksComponent } from './pages/books/books.component';
+import { AddBookComponent } from './pages/add-book/add-book.component';
+import { UpdateBookComponent } from './pages/update-book/update-book.component';
 
 const routes: Routes = [
   {path: '', component:HomeComponent},
   {path:'book', component:BooksComponent},
+  {path:'add', component:AddBookComponent},
+  {path:'edit', component:UpdateBookComponent},
   {path:'register', component:RegisterComponent},
   {path:'profile', component:ProfileComponent}
   
