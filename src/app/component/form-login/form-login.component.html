@@ -1,0 +1,20 @@
+<main>
+    <div>
+        <form [formGroup]="myForm">
+        <h2>Login</h2>
+        <input type="text" id="email" placeholder="Email" name="email" required formControlName="email"
+        [ngClass]="{'is-invalid': (myForm.get('email').dirty || myForm.get('email').touched) && !myForm.get('email').valid}">
+        <div *ngIf="!myForm.get('email').valid" class="invalid">
+            <div *ngIf="!myForm.get('email').errors.required"> El email es necesario</div>
+            <div *ngIf="!myForm.get('email').errors.email"> El email es correcto</div>
+        </div>
+        <input type="password" id="cont" name="pass" placeholder="Contraseña" type="password"  required formControlName="password"
+        [ngClass]="{'is-invalid': (myForm.get('password').dirty || myForm.get('password').touched) && !myForm.get('password').valid}">
+        <div *ngIf="!myForm.get('password').valid" class="invalid">
+            <div *ngIf="!myForm.get('password').errors.required"> La password es necesaria</div>
+            <div *ngIf="!myForm.get('password').errors.minlength"> Debe tener al menos 5 caracteres</div>
+        </div>
+        <button type="submit" (click)="check()" [disabled]="myForm.invalid">Check</button>
+        </form>
+    </div>
+</main>

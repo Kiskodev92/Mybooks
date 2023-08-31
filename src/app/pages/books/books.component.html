@@ -7,6 +7,14 @@
     <h2>Lista de libros</h2>
     </div>
 </ng-template>
+<div class="buscador">
+    <form action="../../form-result.php" method="post" target="_blank">
+    <p>
+        <input type="search" name="busquedamusica" placeholder="Canción, autor, álbum...">
+        <button class="butbus">Buscar</button>
+    </p>
+      </form>
+</div>
 <div class="listalibros">
     <ng-container *ngFor="let bookpadre of books; let par = even">
     <app-card [book]="bookpadre" [par]="par" (eventSon)="cerrarX($event)"></app-card>

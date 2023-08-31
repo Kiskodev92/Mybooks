@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Book } from 'src/app/models/book';
 import { BooksService } from 'src/app/shared/books.service';
 
@@ -10,7 +11,11 @@ import { BooksService } from 'src/app/shared/books.service';
 export class UpdateBookComponent {
   public books : Book[];
 
-  constructor(private servieditbook:BooksService){
-    this.books= this.servieditbook.books
+  constructor(private servieditbook:BooksService, private router: Router){
+    // this.book= this.servieditbook.edit();
   }
+    editbook(book:Book){
+    ;
+    }
+  
 }

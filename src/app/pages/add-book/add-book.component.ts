@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { BooksService } from 'src/app/shared/books.service';
 import { Book } from 'src/app/models/book';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-book',
@@ -10,13 +11,11 @@ import { Book } from 'src/app/models/book';
 export class AddBookComponent {
   public books : Book[];
 
-  constructor(private serviaddbook: BooksService){
-    this.books= this.serviaddbook.books
+  constructor(private serviaddbook: BooksService, private router:Router){
+    this.books= this.serviaddbook.getAll();
   }    
-
-  addbook(title:HTMLInputElement, type:HTMLInputElement, author:HTMLInputElement, price:HTMLInputElement, photo:HTMLInputElement, id_book:HTMLInputElement, id_user:HTMLInputElement){
-    let newbook = new Book(title.value, type.value, author.value, price.valueAsNumber, photo.value, id_book.valueAsNumber, id_user.valueAsNumber)
-    console.log(newbook);
-    this.books.push(newbook);
+  newbook(title:string, type:string, author:string, price:number, photo:string, id_book:number, id_user:number):void{
+    this.serviaddbook.add(title, type, author, price, photo, id_book,id_user);
+    this.router.navigateByUrl('/book');
   }
 }

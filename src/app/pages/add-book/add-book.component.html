@@ -1,6 +1,6 @@
 <main>
-    <div class="formula">
-        <section>
+    <div>
+        <form>
             <h2>Añadir libro</h2>
             <input type="text" placeholder="Titulo" #title>
             <input type="text" placeholder="Categoría" #type>
@@ -8,7 +8,7 @@
             <input type="number" placeholder="Precio" #price>
             <input type="text" placeholder="Foto" #photo>
             <input type="number" placeholder="Codigo libro" #id_book>
-            <button class="butform" (click)="addbook(title,type,author,price,photo,id_book,id_book)">Añadir</button>
-        </section>
+            <button class="butform" (click)="newbook(title.value,type.value,author.value,price.valueAsNumber,photo.value.valueAsNumber,id_book,id_book.valueAsNumber)">Añadir</button>
+        </form>
     </div>
 </main>
