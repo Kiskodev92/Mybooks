@@ -24,15 +24,12 @@ export class BooksService {
   };
 
   add(book:Book):void{
-
     this.books.push(book);
   }
 
   
   edit(book:Book): boolean{
     let i = this.books.findIndex(v => v.id_book == book.id_book);
-    console.log(i);
-    
     if(i !== -1){
       this.books[i] = book;
       return true;
