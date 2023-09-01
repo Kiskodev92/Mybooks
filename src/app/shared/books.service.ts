@@ -25,7 +25,7 @@ export class BooksService {
 
   add(book:Book):void{
     this.books.push(book);
-  }
+  };
 
   
   edit(book:Book): boolean{
