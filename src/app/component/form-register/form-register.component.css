@@ -10,6 +10,9 @@ align-items: center;
 div{
     max-width: 300px;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 form{
     background-color: rgb(195, 204, 204);
@@ -46,4 +49,8 @@ button{
 button:hover{
     background: rgb(31, 141, 219);
     color: rgb(237, 248, 41);
+}
+.invalid{
+    font-weight: bold;
+    color: red;
 }

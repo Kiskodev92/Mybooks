@@ -1,20 +1,47 @@
 <main>
     <div>
-        <form>
+        <form [formGroup]="myRegis">
         <h2>Registrate</h2>
-        <input type="text" id="nombre" placeholder="Nombre" name="nombre" required>
-        
-        <input type="text" id="apellidos" placeholder="Apellidos" name="apellido" required>
-    
-        <input type="text" id="email" placeholder="Email" name="email" required>
-        
-        <input type="email" id="url" placeholder="Url" name="url" required>
+        <input type="text" id="nombre" placeholder="Nombre" name="nombre" formControlName="name"
+        [ngClass]="{'is-invalid': (myRegis.get('name').dirty || myRegis.get('name').touched) && !myRegis.get('name').valid}">
+        <div *ngIf="!myRegis.get('name').valid" class="invalid">
+            <div *ngIf="myRegis.get('name').errors.required"> El nombre es necesario</div>
+        </div>
 
-        <input id="cone" name="pass" placeholder="Contraseña" type="password"  required>
+        <input type="text" id="apellidos" placeholder="Apellidos" name="apellido"  formControlName="apellidos"
+        [ngClass]="{'is-invalid': (myRegis.get('apellidos').dirty || myRegis.get('apellidos').touched) && !myRegis.get('apellidos').valid}">
+        <div *ngIf="!myRegis.get('apellidos').valid" class="invalid">
+            <div *ngIf="myRegis.get('apellidos').errors.required"> El apellido es necesario</div>
+        </div>
         
-        <input id="recon" name="reppass" placeholder="Repetir contraseña" type="password"  required>
-        
-        <button type="submit">Registrar</button>
+        <input type="email" id="email" placeholder="Email" name="email" formControlName="email"
+        [ngClass]="{'is-invalid': (myRegis.get('email').dirty || myRegis.get('email').touched) && !myRegis.get('email').valid}">
+        <div *ngIf="!myRegis.get('email').valid" class="invalid">
+            <div *ngIf="!myRegis.get('email').errors.required"> El email es necesario</div>
+            <div *ngIf="!myRegis.get('email').errors.email"> El email es correcto</div>
+        </div>
+
+        <input type="text" id="url" placeholder="Url" name="url" formControlName="url"
+        [ngClass]="{'is-invalid': (myRegis.get('url').dirty || myRegis.get('url').touched) && !myRegis.get('url').valid}">
+        <div *ngIf="!myRegis.get('url').valid" class="invalid">
+            <div *ngIf="myRegis.get('url').errors.required"> La url necesario</div>
+        </div>
+
+        <input id="cone" name="pass" placeholder="Contraseña" type="password" formControlName="password"
+        [ngClass]="{'is-invalid': (myRegis.get('password').dirty || myRegis.get('password').touched) && !myRegis.get('password').valid}">
+        <div *ngIf="!myRegis.get('password').valid" class="invalid">
+            <div *ngIf="!myRegis.get('password').errors.required"> La password es necesaria</div>
+            <div *ngIf="!myRegis.get('password').errors.minlength"> Debe tener al menos 5 caracteres</div>
+        </div>
+
+        <input id="recon" name="reppass" placeholder="Repetir contraseña" type="password" formControlName="reppass"
+        [ngClass]="{'is-invalid': (myRegis.get('reppass').dirty || myRegis.get('reppass').touched) && !myRegis.get('reppass').valid}">
+        <div *ngIf="!myRegis.get('reppass').valid" class="invalid">
+            <div *ngIf="!myRegis.get('reppass').errors.required"> Confirma password</div>
+            <div *ngIf="!myRegis.get('reppass').errors.minlength"> Debe tener al menos 5 caracteres</div>
+        </div>
+
+        <button type="submit" (click)="regis()" [disabled]="myRegis.invalid">Registrar</button>
         </form>
     </div>
 </main>

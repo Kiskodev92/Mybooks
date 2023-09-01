@@ -19,7 +19,9 @@ export class BooksService {
     return this.books;
   };
 
-  getOne(id_book:number){};
+  getOne(id_book:number):Book[]{
+    return this.books.filter(val => val.id_book === id_book);
+  };
 
   add(title:string, type:string, author:string, price:number, photo:string, id_book:number, id_user:number):void{
     let newbook: Book = new Book(title, type, author, price, photo, id_book, id_user)
@@ -38,7 +40,7 @@ export class BooksService {
   };
 
 
-  delete(id_book:number){
-    this.books = this.books.filter(idb => idb.id_book !=id_book);
+  delete(idnum:number){
+    this.books = this.books.filter(idb => idb.id_book !=idnum);
   };
 }

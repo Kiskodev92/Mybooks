@@ -19,15 +19,12 @@ export class FormLoginComponent {
   private buildForm(){
     let minPass= 5;
     this.myForm = this.FormBuilder.group({
-      nombre: [, Validators.required],
       email: [,[Validators.required, Validators.email]],
       password: [,[Validators.required, Validators.minLength(minPass)]],
     })
   }
   check(){
-    if(this.myForm.valid){
-      console.log(this.myForm);
-    }else{}
+      console.log(this.myForm.value);
   }
   ngOnInit():void{}
 }
