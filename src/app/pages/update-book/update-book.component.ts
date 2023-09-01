@@ -14,8 +14,8 @@ export class UpdateBookComponent {
   constructor(private servieditbook:BooksService, private router: Router){
     // this.book= this.servieditbook.edit();
   }
-    editbook(book:Book){
-    ;
+    editbook(title:string, type:string, author:string, price:number, photo:string, id_book:number){
+      this.servieditbook.edit(new Book(title, type, author, price, photo, id_book));
     }
   
 }

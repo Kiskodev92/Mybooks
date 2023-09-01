@@ -20,23 +20,23 @@ export class BooksService {
   };
 
   getOne(id_book:number):Book[]{
-    return this.books.filter(val => val.id_book === id_book);
+    return this.books.filter(val => val.id_book == id_book);
   };
 
-  add(title:string, type:string, author:string, price:number, photo:string, id_book:number, id_user:number):void{
-    let newbook: Book = new Book(title, type, author, price, photo, id_book, id_user)
-    console.log(newbook);
-    this.books.push(newbook);
+  add(book:Book):void{
+
+    this.books.push(book);
   }
 
   
   edit(book:Book): boolean{
-    let i = this.books.findIndex(v => v.id_book === book.id_book);
+    let i = this.books.findIndex(v => v.id_book == book.id_book);
+    console.log(i);
+    
     if(i !== -1){
       this.books[i] = book;
       return true;
     } return false;
-
   };
 
 

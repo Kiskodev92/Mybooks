@@ -15,7 +15,6 @@ export class AddBookComponent {
     this.books= this.serviaddbook.getAll();
   }    
   newbook(title:string, type:string, author:string, price:number, photo:string, id_book:number, id_user:number):void{
-    this.serviaddbook.add(title, type, author, price, photo, id_book,id_user);
-    this.router.navigateByUrl('/book');
+    this.serviaddbook.add(new Book(title, type, author, price, photo, id_book,id_user));
   }
 }

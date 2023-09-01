@@ -15,5 +15,11 @@ export class BooksComponent {
   }
   cerrarX(num:number){
     this.books = this.books.filter(idb => idb.id_book !=num)
+    this.serviBook.delete(num);
+  }
+  busq(id_book:number){
+    if(id_book){
+      this.books = this.serviBook.getOne(id_book)
+    }else{ this.books = this.serviBook.getAll()};
   }
 }

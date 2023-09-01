@@ -10,8 +10,8 @@
 <div class="buscador">
     <form action="../../form-result.php" method="post" target="_blank">
     <p>
-        <input type="search" name="busquedamusica" placeholder="Canción, autor, álbum...">
-        <button class="butbus">Buscar</button>
+        <input type="search" name="busquedamusica" placeholder="Canción, autor, álbum..." #findid>
+        <button class="butbus" (click)="busq(findid.value)">Buscar</button>
     </p>
       </form>
 </div>
@@ -20,16 +20,4 @@
     <app-card [book]="bookpadre" [par]="par" (eventSon)="cerrarX($event)"></app-card>
     </ng-container>
 </div>
-<!-- <div class="formula">
-    <section>
-        <h2>Añadir libro</h2>
-        <input type="text" placeholder="Titulo" #title>
-        <input type="text" placeholder="Categoría" #type>
-        <input type="text" placeholder="Autor" #author>
-        <input type="number" placeholder="Precio" #price>
-        <input type="text" placeholder="Foto" #photo>
-        <input type="number" placeholder="Codigo libro" #id_book>
-        <button class="butform" (click)="addbook(title,type,author,price,photo,id_book,id_book)">Añadir</button>
-    </section>
-</div> -->
 </main>
