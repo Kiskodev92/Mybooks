@@ -12,9 +12,12 @@ export class AddBookComponent {
   public books : Book[];
 
   constructor(private serviaddbook: BooksService, private router:Router){
-    this.books= this.serviaddbook.getAll();
+    this.books= this.serviaddbook.books;
   }    
-  newbook(title:string, type:string, author:string, price:number, photo:string, id_book:number, id_user:number):void{
-    this.serviaddbook.add(new Book(title, type, author, price, photo, id_book,id_user));
+  newbook(title:string, type:string, author:string, price:number, photo:string, id_book:number, ):void{
+    this.serviaddbook.add(new Book(title, type, author, price, photo, id_book)).subscribe((data)=>{
+      console.log(data);
+      
+    })
   }
 }
