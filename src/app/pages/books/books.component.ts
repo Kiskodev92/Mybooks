@@ -3,8 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Book } from 'src/app/models/book';
 import { BooksService } from 'src/app/shared/books.service';
 import { ToastrService } from 'ngx-toastr';
-import { UsuarioService } from 'src/app/models/user-answer';
-import { Answer } from 'src/app/models/answers';
+import { UsuarioService } from 'src/app/shared/user.service';
+import { Answer } from 'src/app/models/answers'; 
 
 @Component({
   selector: 'app-books',

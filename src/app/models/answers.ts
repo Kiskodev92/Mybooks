@@ -2,7 +2,7 @@ import { Book } from "./book";
 import { User } from "./user";
 
 
-export class Respuesta {
+export class Answer {
 
   constructor(public error: boolean,
               public codigo: number,
