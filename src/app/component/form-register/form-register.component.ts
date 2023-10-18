@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { UserAnswer } from 'src/app/models/user-answer';
+import { UsuarioService } from 'src/app/shared/user.service';
 
 @Component({
   selector: 'app-form-register',
@@ -9,11 +13,22 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class FormRegisterComponent {
   public myRegis: FormGroup;
 
-  constructor(private Formbuilder: FormBuilder){
+  constructor(private Formbuilder: FormBuilder, private userService:UsuarioService, public toastr: ToastrService, public router: Router){
     this.buildForm()
   }
   public register(){
-    console.log(this.myRegis.value);
+    const user = this.myRegis.value;
+    console.log(user);
+    this.userService.register(user).subscribe((data: UserAnswer) =>{
+      console.log(data);
+      if (data.mensaje != "-1"){
+        this.toastr.success("Congrats! you are registred!");
+        this.router.navigate(["/loginPage"])
+      } 
+      else {
+        this.toastr.error("Try again")
+      }
+    });
   }
 
   private buildForm(){
@@ -27,6 +42,13 @@ export class FormRegisterComponent {
       reppass: [,[Validators.required, Validators.minLength(minPass)]],
     })
   } 
+  private checkPasswords(control: AbstractControl){
+    let result = {matchPassword: true};
+    if (control.parent?.value.password == control.value)
+      result = null;
+    return result;
+  }
+
   regis(){
       console.log(this.myRegis.value);
   }

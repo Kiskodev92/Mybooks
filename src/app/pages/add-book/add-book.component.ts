@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { BooksService } from 'src/app/shared/books.service';
 import { Book } from 'src/app/models/book';
-import { Router } from '@angular/router';
+import { BooksComponent } from '../books/books.component';
+import { UsuarioService } from 'src/app/shared/user.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-add-book',
@@ -9,15 +11,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./add-book.component.css']
 })
 export class AddBookComponent {
-  public books : Book[];
 
-  constructor(private serviaddbook: BooksService, private router:Router){
-    this.books= this.serviaddbook.books;
-  }    
-  newbook(title:string, type:string, author:string, price:number, photo:string, id_book:number, ):void{
-    this.serviaddbook.add(new Book(title, type, author, price, photo, id_book)).subscribe((data)=>{
+  constructor(public serviaddbook:BooksService, private toastr: ToastrService, public UserService: UsuarioService){}
+  
+  public send (title:string, type:string, author: string, price: number, photo:string){
+  let newbook = new Book(title, type, author, price, photo, null, this.UserService.user.Id_user)
+    this.serviaddbook.add(newbook).subscribe((data)=>{
       console.log(data);
-      
-    })
+      this.toastr.sucess("Se ha añadido un nuevo libro: " + newbook.title)
+    });
   }
 }
