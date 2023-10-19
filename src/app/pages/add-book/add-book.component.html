@@ -7,8 +7,7 @@
             <input type="text" placeholder="Autor" #author>
             <input type="number" placeholder="Precio" #price>
             <input type="text" placeholder="Foto" #photo>
-            <input type="number" placeholder="Codigo libro" #id_book>
-            <button class="butform" (click)="newbook(title.value,type.value,author.value,price.valueAsNumber,photo.value,id_book.valueAsNumber)">Añadir</button>
+            <button class="butform" (click)="send(title.value,type.value,author.value,price.valueAsNumber,photo.value)">Añadir</button>
         </form>
     </div>
 </main>

@@ -16,7 +16,7 @@ export class BooksComponent {
 
   constructor(public serviBook: BooksService, private toastr: ToastrService, private userService: UsuarioService){
     this.books = []
-      this.serviBook.getAll(this.userService.user.Id_user).subscribe((data:Answer) =>{
+      this.serviBook.getAll().subscribe((data:Answer) =>{
       console.log(data)
       this.books = data.data;
     });

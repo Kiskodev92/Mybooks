@@ -18,7 +18,7 @@ export class AddBookComponent {
   let newbook = new Book(title, type, author, price, photo, null, this.UserService.user.Id_user)
     this.serviaddbook.add(newbook).subscribe((data)=>{
       console.log(data);
-      this.toastr.sucess("Se ha añadido un nuevo libro: " + newbook.title)
+      this.toastr.success("Se ha añadido un nuevo libro: " + newbook.title)
     });
   }
 }
