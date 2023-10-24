@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
+import { User } from 'src/app/models/user';
 import { UserAnswer } from 'src/app/models/user-answer';
 import { UsuarioService } from 'src/app/shared/user.service';
 
@@ -13,23 +13,18 @@ import { UsuarioService } from 'src/app/shared/user.service';
 export class FormRegisterComponent {
   public myRegis: FormGroup;
 
-  constructor(private Formbuilder: FormBuilder, private userService:UsuarioService, public toastr: ToastrService, public router: Router){
+  constructor(private Formbuilder: FormBuilder, private userService:UsuarioService, private router: Router){
     this.buildForm()
   }
-  public register(){
-    const user = this.myRegis.value;
-    console.log(user);
-    this.userService.register(user).subscribe((data: UserAnswer) =>{
+  public register(id_user:number ,name:string ,last_name:string ,email:string ,photo:string, password:string){
+   console.log( this.myRegis.value);
+
+    this.userService.register(new User(0,name, last_name, email,photo,password)).subscribe((data:any) =>{
       console.log(data);
-      if (data.mensaje != "-1"){
-        this.toastr.success("Congrats! you are registred!");
-        this.router.navigate(["/loginPage"])
-      } 
-      else {
-        this.toastr.error("Try again")
-      }
-    });
-  }
+     
+  })
+  this.router.navigateByUrl('/login')
+}
 
   private buildForm(){
     let minPass = 6;

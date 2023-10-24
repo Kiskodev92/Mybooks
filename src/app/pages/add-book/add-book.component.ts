@@ -3,7 +3,7 @@ import { BooksService } from 'src/app/shared/books.service';
 import { Book } from 'src/app/models/book';
 import { BooksComponent } from '../books/books.component';
 import { UsuarioService } from 'src/app/shared/user.service';
-import { ToastrService } from 'ngx-toastr';
+
 
 @Component({
   selector: 'app-add-book',
@@ -12,13 +12,13 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class AddBookComponent {
 
-  constructor(public serviaddbook:BooksService, private toastr: ToastrService, public UserService: UsuarioService){}
+  constructor(public serviaddbook:BooksService, public UserService: UsuarioService){}
   
   public send (title:string, type:string, author: string, price: number, photo:string){
-  let newbook = new Book(title, type, author, price, photo, null, this.UserService.user.Id_user)
+  let newbook = new Book(title, type, author, price, photo, 0, this.UserService.user.id_user)
     this.serviaddbook.add(newbook).subscribe((data)=>{
       console.log(data);
-      this.toastr.success("Se ha añadido un nuevo libro: " + newbook.title)
+     
     });
   }
 }

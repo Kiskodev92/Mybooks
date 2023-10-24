@@ -4,7 +4,6 @@ import { Book } from 'src/app/models/book';
 import { BooksService } from 'src/app/shared/books.service';
 import { HttpClient } from '@angular/common/http';
 import { UsuarioService } from 'src/app/shared/user.service';
-import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-update-book',
@@ -14,14 +13,11 @@ import { ToastrService } from 'ngx-toastr';
 export class UpdateBookComponent {
   public books : Book[];
 
-  constructor(public servieditbook:BooksService, private toastr: ToastrService, private http:HttpClient, public userService: UsuarioService){
+  constructor(public servieditbook:BooksService, private http:HttpClient, public userService: UsuarioService,private router:Router){
   }
     editbook(title:string, type:string, author:string, price:number, photo:string, id_book:number){
-      let bookedit = new Book(title, type, author, price, photo, id_book, this.userService.user.Id_user);
+      let bookedit = new Book(title, type, author, price, photo, id_book, this.userService.user.id_user);
       console.log(bookedit);
-      
-      this.servieditbook.edit(bookedit).subscribe((data) =>{
-        this.toastr.success("La referencia" + " " + bookedit.id_book + "fue modificada")
-      });
+      this.router.navigateByUrl('/book')
     }
 }
